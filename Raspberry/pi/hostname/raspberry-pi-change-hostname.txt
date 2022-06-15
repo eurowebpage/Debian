@@ -1,0 +1,11 @@
+Open the /etc/hosts file for editing. 
+---
+sudo nano /etc/hosts
+---
+---------------------------------------------------
+Open /etc/hostname for editing. 
+--
+sudo nano /etc/hostname
+--
+---------------------------------------------------
+reboot
