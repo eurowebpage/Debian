@@ -1,0 +1,13 @@
+vi reset_root_passwd.sh
+-------------------------
+
+#!/bin/bash
+
+ssh root@server_name1 "echo new_passwd|passwd root –stdin"
+ssh root@server_name2 "echo new_passwd|passwd root –stdin"
+ssh root@server_name3 "echo new_passwd|passwd root –stdin"
+
+:wq
+
+#chmod +x reset_root.sh
+# ./reset_root.sh
