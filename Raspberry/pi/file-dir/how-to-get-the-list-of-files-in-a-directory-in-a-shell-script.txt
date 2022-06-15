@@ -1,0 +1,6 @@
+
+search_dir=/the/path/to/base/dir/
+for entry in "$search_dir"/*
+do
+  echo "$entry"
+done
