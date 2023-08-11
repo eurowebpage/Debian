@@ -1,12 +1,22 @@
 =======================================
+Check if-apache-is-installed-on-a-system 
+=======================================
+dpkg --get-selections | grep apache
+
+=======================================
 Install Apache2
 =======================================
+
 sudo apt update && sudo apt -y upgrade
 sudo apt install apache2
 sudo systemctl start apache2
 
 =======================================
 Install PHP
+****
+Check if-PHP-is-installed-on-a-system 
+=>
+dpkg --get-selections | grep php
 =======================================
 sudo apt -y install php php-common
 
