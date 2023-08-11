@@ -1,0 +1,10 @@
+***********
+Example
+***********
+wget [options] [url]
+***
+options - The Wget options - https://linux.die.net/man/1/wget
+url - URL of the file or directory you want to download or synchronize.
+***
+Example =>
+wget http://another-local-pc-debian-or-dns/filename
