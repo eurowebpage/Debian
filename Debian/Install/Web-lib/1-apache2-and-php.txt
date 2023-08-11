@@ -1,0 +1,43 @@
+=======================================
+Install Apache2
+=======================================
+sudo apt update && sudo apt -y upgrade
+sudo apt install apache2
+sudo systemctl start apache2
+
+=======================================
+Install PHP
+=======================================
+sudo apt -y install php php-common
+
+sudo apt -y install php-cli php-fpm php-json php-pdo php-mysql php-zip php-gd  php-mbstring php-curl php-xml php-pear php-bcmath
+
+sudo apt -y install libapache2-mod-php
+
+sudo systemctl start apache2
+
+sudo a2enmod php8.* 
+
+=======================================
+Divers
+=======================================
+
+sudo reboot
+
+sudo systemctl status apache2
+
+hostname -I
+
+sudo apt install curl
+
+sudo systemctl stop apache2
+
+sudo systemctl start apache2
+
+sudo systemctl restart apache2
+
+systemctl is-enabled apache2
+
+==============================================
+
+chmod u+r+x 
