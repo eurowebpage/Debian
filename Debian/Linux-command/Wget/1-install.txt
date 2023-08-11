@@ -1,0 +1,18 @@
+=======================================
+Install wget
+=======================================
+Check if-apache-is-installed-on-a-system 
+***********
+dpkg --get-selections | grep wget
+*********** else install it ***********
+sudo apt install wget
+***********
+Example
+***********
+wget [options] [url]
+***
+options - The Wget options - https://linux.die.net/man/1/wget
+url - URL of the file or directory you want to download or synchronize.
+***
+Example =>
+wget http://another-local-pc-debian-or-dns/filename
