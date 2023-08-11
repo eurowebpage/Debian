@@ -1,0 +1,22 @@
+
+nano /etc/sudoers
+sudo visudo
+== Add or modify ###
+www-data        ALL=(ALL:ALL) NOPASSWD: ALL
+root        ALL=(ALL:ALL) NOPASSWD: ALL
+
+=============
+Example Test
+=============
+
+
+<?php
+$host_name = shell_exec("hostnamectl | grep 'hostname'");
+$product_name = shell_exec("sudo dmidecode -s system-product-name");
+$system_version = exec("sudo dmidecode -s system-version");
+
+
+?>
+<p>Hostname : <?php echo $host_name;  ?></p>
+<p>Product name : <?php echo $product_name;  ?></p>
+<p>System name :<?php echo $system_version;  ?></p>
