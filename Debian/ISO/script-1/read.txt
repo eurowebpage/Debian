@@ -1,0 +1,7 @@
+cd /
+nano dlbuilder.sh
+chmod u+r+x dlbuilder.sh
+sudo bash dlbuilder.sh
+=====================
+achitecture i386
+Debian bookworm
