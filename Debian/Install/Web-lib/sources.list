@@ -1,0 +1,10 @@
+/etc/apt/sources.list
+===========================
+Debian 12 (Bookworm)
+Note: Newly added non-free-firmware area added by default
+
+Original:
+
+deb http://deb.debian.org/debian bookworm main contrib non-free-firmware non-free
+deb http://deb.debian.org/debian bookworm-updates main contrib non-free-firmware non-free
+deb http://security.debian.org/debian-security bookworm-security main contrib non-free-firmware non-free
