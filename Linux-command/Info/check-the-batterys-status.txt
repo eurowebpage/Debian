@@ -1,0 +1,27 @@
+cat /sys/class/power_supply/BAT0/capacity
+cat /sys/class/power_supply/BAT?/capacity
+
+cat /sys/class/power_supply/BAT0/uevent
+grep POWER_SUPPLY_CAPACITY /sys/class/power_supply/BAT1/uevent
+
+
+upower -i /org/freedesktop/UPower/devices/battery_BAT0
+
+upower -i $(upower -e | grep '/battery') | grep --color=never -E "state|to\ full|to\ empty|percentage"
+
+upower -i $(upower -e | grep '/battery') | grep --color=never -E percentage|xargs|cut -d' ' -f2|sed s/%//
+upower -i $(upower -e | grep '/battery') | grep --color=never -E state|xargs|cut -d' ' -f2|sed s/%//
+upower -i $(upower -e | grep '/battery') | grep --color=never -E full|xargs|xargs|cut -d' ' -f2|sed s/%//
+
+upower -i $(upower -e | grep 'BAT') | grep -E "state|to\"
+upower -i $(upower -e | grep 'BAT') | grep -E "full|percentage"
+upower -i $(upower -e | grep 'BAT') | grep -E "percentage"
+upower -i $(upower -e | grep 'BAT') | grep -E "state"
+upower -i $(upower -e | grep 'BAT') | grep -E "full"
+
+=================================
+acpi
+=================================
+sudo apt-get install acpi
+acpi -V
+===========
