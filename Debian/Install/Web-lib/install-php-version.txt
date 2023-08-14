@@ -1,0 +1,39 @@
+apt-cache policy php
+apt update
+apt install php
+php -v
+
+
+sudo apt install -y apt-transport-https lsb-release ca-certificates wget 
+wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list 
+
+sudo apt update
+sudo apt upgrade
+
+
+Install PHP 8.2
+Now, install PHP 8.2 by running the following command:
+
+sudo apt install -y php8.2 
+
+Install PHP 8.1
+To install PHP 8.1, execute the following command:
+
+sudo apt install -y php8.2 
+
+Install PHP 7.4
+For some legacy applications, you may need an older version like PHP 7.4. Now you can install PHP 7.4 using the following command:
+
+sudo apt install -y php7.4 
+
+Verify the Installation
+You can check the installation using the same method as above:
+
+php -v 
+
+Switching Between PHP Versions
+If you have multiple versions of PHP installed, you can switch between them using the update-alternatives command. For example, to switch to PHP 7.4, you would use:
+
+sudo update-alternatives --set php /usr/bin/php7.4 
+To switch back to PHP 8.2, replace php7.4 with php8.2.
