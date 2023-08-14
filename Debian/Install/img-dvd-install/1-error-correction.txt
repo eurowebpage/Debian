@@ -1,0 +1,23 @@
+
+Changement de support : veuillez insérer le disque nommé
+« Debian GNU/Linux 12.1.0 _Bookworm_ - Official amd64 DVD Binary-1 with firmware 20230722-10:49 »
+dans le lecteur « /media/cdrom/ » et appuyez sur la touche Entrée
+
+1 .============================
+mv /etc/apt/sources.list /etc/apt/sources.list.bak
+2 .============================
+cat > /etc/apt/sources.list << EOF
+# Debian Buster, dépôt principal + paquets non libres
+deb http://deb.debian.org/debian/ buster main contrib non-free
+deb-src http://deb.debian.org/debian/ buster main contrib non-free
+ 
+# Debian Buster, mises à jour de sécurité + paquets non libres
+deb http://deb.debian.org/debian-security/ buster/updates main contrib non-free
+deb-src http://deb.debian.org/debian-security/ buster/updates main contrib non-free
+ 
+# Debian Buster, mises à jour "volatiles" + paquets non libres
+deb http://deb.debian.org/debian/ buster-updates main contrib non-free
+deb-src http://deb.debian.org/debian/ buster-updates main contrib non-free
+EOF
+3 .============================
+apt update && apt upgrade
