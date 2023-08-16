@@ -1,0 +1,8 @@
+firefox-esr.desktop
+===================================
+/usr/share/applications
+~/.local/share/applications
+===================================
+
+
+
