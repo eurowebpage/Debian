@@ -1,0 +1,4 @@
+apt install sysvbanner
+=======================
+banner Hello
+=======================
