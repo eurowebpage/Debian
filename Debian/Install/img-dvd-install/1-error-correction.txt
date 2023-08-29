@@ -7,17 +7,14 @@ dans le lecteur « /media/cdrom/ » et appuyez sur la touche Entrée
 mv /etc/apt/sources.list /etc/apt/sources.list.bak
 2 .============================
 cat > /etc/apt/sources.list << EOF
-# Debian Buster, dépôt principal + paquets non libres
-deb http://deb.debian.org/debian/ buster main contrib non-free
-deb-src http://deb.debian.org/debian/ buster main contrib non-free
- 
-# Debian Buster, mises à jour de sécurité + paquets non libres
-deb http://deb.debian.org/debian-security/ buster/updates main contrib non-free
-deb-src http://deb.debian.org/debian-security/ buster/updates main contrib non-free
- 
-# Debian Buster, mises à jour "volatiles" + paquets non libres
-deb http://deb.debian.org/debian/ buster-updates main contrib non-free
-deb-src http://deb.debian.org/debian/ buster-updates main contrib non-free
+deb http://deb.debian.org/debian bookworm main non-free-firmware
+deb-src http://deb.debian.org/debian bookworm main non-free-firmware
+
+deb http://deb.debian.org/debian-security/ bookworm-security main non-free-firmware
+deb-src http://deb.debian.org/debian-security/ bookworm-security main non-free-firmware
+
+deb http://deb.debian.org/debian bookworm-updates main non-free-firmware
+deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware
 EOF
 3 .============================
 apt update && apt upgrade
