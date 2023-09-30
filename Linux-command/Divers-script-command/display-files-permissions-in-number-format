@@ -1,0 +1,6 @@
+You can display the octal permissions for a file using the stat command:
+
+stat -c %a [filename]
+Or by using find:
+
+find [path] -printf '%m %p\n'
