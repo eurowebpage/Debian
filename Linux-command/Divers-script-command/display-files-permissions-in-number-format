@@ -4,3 +4,33 @@ stat -c %a [filename]
 Or by using find:
 
 find [path] -printf '%m %p\n'
+----
+Je sais que c'est un vieux message, mais je l'ai trouvé en cherchant une solution à ce problème et je l'ai développé :
+
+stat -c '%a - %n'
+Cela affichera les autorisations du fichier et le nom du fichier. Cela vous permet de voir les autorisations de chaque fichier dans un dossier avec :
+
+stat -c '%a - %n' *
+
+Donc, taper perms * me donnera les autorisations de chaque fichier ou perms file.php me donnera les autorisations de ce seul fichier.
+
+Pour les utilisateurs qui trouvent cela en recherchant une solution pour OSX :
+
+Les versions d'OSX après 10.10 n'ont plus de version de stat qui accepte le paramètre -c. Si vous obtenez une erreur concernant "option illégale -- c", vous devriez pouvoir utiliser cette commande stat :
+
+stat -f "%A -  %N" *
+---
+Vous pouvez également utiliser cette solution de contournement :
+
+find FILENAME/DIRECROY -printf "%m:%f\n"
+Exemple : vérifiez mon répertoire de vidéos :
+
+find Videos -printf "%m:%f\n"
+
+755:Videos
+Une autre méthode :
+
+Utilisé pour lister tous les fichiers du répertoire avec leurs autorisations
+
+ls -l | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/) \
+             *2^(8-i));if(k)printf("%0o ",k);print}'
