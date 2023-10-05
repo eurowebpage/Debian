@@ -1,0 +1,44 @@
+View All Log Messages
+To view all journald logs, simply run the journalctl command without any arguments:
+
+sudo journalctl
+
+If you want to change the order in which the system outputs the logs, i.e. show the latest one first, you can use the -r flag with the command. The -r flag stands for Reverse.
+sudo journalctl -r
+
+--------------------
+View Kernel journald Logs
+Kernel logs are very important on Linux because they contain information related to your system from the time it boots up. To view kernel logs only, specify the -k flag with the journalctl command:
+
+sudo journalctl -k
+--------------------
+Filter journald Logs by a Specific Program
+You can also view logs related to a specific program or service using journalctl. For example, to view logs associated with the cron service, run the command below:
+
+sudo journalctl -u cron
+--------------------
+View Log Messages in Real-Time
+Sometimes you might want to view the logs in real-time as they are being logged. For that, issue the following command:
+
+sudo journalctl -f
+--------------------
+Get Log Messages by Date
+You can use journalctl to filter and analyze the logs using a timestamp. For example, to display the logs from yesterday until now:
+
+
+sudo journalctl --since=yesterday
+You can be more specific by using a detailed "since" and "until" timestamp, as follows:
+
+sudo journalctl --since="2021-07-17 12:00:00" --until="2021-07-17 15:00:00"
+Journalctl will only display the log messages for the specified period.
+--------------------
+View Log Messages by UID or PID
+You can also filter journald logs using the user ID (UID) or the process ID (PID). The basic syntax is:
+
+sudo journalctl _UID=0
+...where 0 is the UID for the root account. You can also replace UID in the aforementioned command with either PID or GID (group ID).
+--------------------
+Formatting the journalctl Output
+To view journalctl logs using a specific output format, you should use the journalctl -o command followed by your preferred format. For example, to display the logs in a pretty JSON format, run the command below:
+
+sudo journalctl -o json-pretty
