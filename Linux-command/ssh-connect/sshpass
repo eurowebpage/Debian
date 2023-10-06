@@ -1,0 +1,4 @@
+sshpass -p pass ssh root@host ' ./dist/test'  //script in root dir
+sshpass -p pass ssh root@host ' ~/../test'  //script in home dir
+
+sshpass -p pass ssh debian@host
