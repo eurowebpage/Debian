@@ -1,0 +1,3 @@
+#!/bin/bash
+stati=$(stat -c '%a - %n' *)
+echo $stati
