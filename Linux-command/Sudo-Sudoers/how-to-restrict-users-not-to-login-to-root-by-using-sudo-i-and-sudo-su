@@ -1,0 +1,6 @@
+deny the user from running sudo -s or sudo -i
+-----------------
+nano /etc/sudoers
+-----------------
+nano /etc/sudoers.d/90-cloud-init-users
+debian ALL= ALL,!/bin/su,!/bin/bash
