@@ -7,3 +7,8 @@ PermitRootLogin yes
 
 /etc/init.d/ssh restart
 
+exemple
+--------
+ssh root@10.1.1.12
+
+sshpass -p pass ssh root@vps-55555 'ls -l'
