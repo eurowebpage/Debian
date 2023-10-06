@@ -1,0 +1,9 @@
+nano /etc/ssh/sshd_config
+
+FROM:
+PermitRootLogin without-password
+TO:
+PermitRootLogin yes
+
+/etc/init.d/ssh restart
+
